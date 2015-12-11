@@ -33,4 +33,14 @@ public class PromotionManager {
             }
         }
     }
+
+    public boolean havePromotions(String barcode) {
+        if (promotionMap.isEmpty())
+            return false;
+
+        if (promotionMap.get(barcode)==null)
+            return false;
+        else
+            return true;
+    }
 }

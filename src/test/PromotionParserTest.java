@@ -34,7 +34,7 @@ public class PromotionParserTest {
         Map<String, PromotionStrategy> promotionStrategyMap = promotionParser.parse(Arrays.asList("item001"));
 
         assertThat(promotionStrategyMap.size(), is(1));
-        assertThat(promotionStrategyMap.get("item001").getClass().getName(), is("main.strategy.PromotionSecondHalfTest"));
+        assertThat(promotionStrategyMap.get("item001").getClass().getName(), is("main.strategy.PromotionSecondHalf"));
     }
 
     @Test

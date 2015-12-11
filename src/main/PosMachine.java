@@ -29,7 +29,12 @@ public class PosMachine {
         String barcode = cartItem.getBarcode();
         double itemPrice = findItemPrice(barcode);
 
-        return promotionManager.calculateTotalAfterPromotions(barcode, itemPrice, cartItem.getQuantity());
+        if (promotionManager.havePromotions(barcode)) {
+            return promotionManager.calculateTotalAfterPromotions(barcode, itemPrice, cartItem.getQuantity());
+        }
+        else {
+            return itemPrice * cartItem.getQuantity();
+        }
     }
 
     private double findItemPrice(final String barcode) {

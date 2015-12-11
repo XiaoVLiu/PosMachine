@@ -60,12 +60,4 @@ public class ParserTest {
         assertEquals(items.get(1).getPrice(), 30, 1e-6);
         assertEquals(items.get(2).getPrice(), 40, 1e-6);
     }
-
-    @Test
-    public void testShouldParseSecondHalfPromotionSuccessfully() {
-        SecondHalfParser secondHalfParser = new SecondHalfParser();
-        Map<String, PromotionStrategy> promotionMap = secondHalfParser.parse(asList("item001"));
-
-        assertThat(promotionMap.get("item001").getClass().getName(), is("main.strategy.PromotionSecondHalfTest"));
-    }
 }
